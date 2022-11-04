@@ -1,0 +1,18 @@
+.clock-container {
+    background: dimgray;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.clock-time,
+.clock-ampm {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: lightgrey;
+}
+
+.clock-time {
+    font-size: 48px;
+}
