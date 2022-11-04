@@ -6,15 +6,26 @@ class DigitalClock {
         //to make sure the element class has a refnernce to our main element in html div-to update the values
     }
 
+    //need to now make it run automatically
+
+
     update() {
         const parts = this.getTime();
         //so that any minute under 10 has a 0 in front of it
         //log: "8".padStart(2, "0") would log out "08"
         const minuteFormat = parts.minute.toString().padStart(2, "0");
         const timeFormat = `${parts.hour}:${minuteFormat}`;
+        //am otherwise its pm
+        const amPm = parts.isAm ? "AM" : "PM";
 
-        console.log(timeFormat);
+        // console.log(timeFormat);
+
+        //to select the time element in the HTML - grabbing this value and putting it in the clock-time span
+        this.element.querySelector(".clock-time").textContent = timeFormat;
+        //for the ampm span
+        this.element.querySelector(".clock-ampm").textContent = amPm;
     }
+
 
     //need to create a method to get the current time
     getTime(){
