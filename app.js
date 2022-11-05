@@ -22,7 +22,8 @@ class DigitalClock {
         //so that any minute under 10 has a 0 in front of it
         //log: "8".padStart(2, "0") would log out "08"
         const minuteFormat = parts.minute.toString().padStart(2, "0");
-        const timeFormat = `${parts.hour}:${minuteFormat}`;
+        const secondsFormat = parts.seconds.toString().padStart(2, "0");
+        const timeFormat = `${parts.hour}:${minuteFormat}:${secondsFormat}`;
         //am otherwise its pm
         const amPm = parts.isAm ? "AM" : "PM";
 
@@ -41,10 +42,12 @@ class DigitalClock {
 
         //return the new object containing 3 properties
         //23 (24hrs) % 12(hours on clock) = 11 (the time that's not 24hrs)
+        //using % 12 after the .getHours() makes it 12 hours not 24hrs
         return {
-            hour: now.getHours() % 12,
+            hour: now.getHours(),
             minute: now.getMinutes(),
-            isAm: now.getHours() < 12,
+            seconds: now.getSeconds(),
+            isAm: now.getHours() < 12
             // second: now.getSeconds()
         };
     }

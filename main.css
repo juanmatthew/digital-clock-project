@@ -1,18 +1,29 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    /*need to center mid page so u need align items but need to add height so use viewport height (vh)*/
+    align-items: center;
+    height: 80vh;
+    background-color: #ffffff;
+}
+
 .clock-container {
-    background: dimgray;
-    width: 200px;
-    padding: 10px;
+    background: #7ead9a;
+    width: 350px;
+    padding: 20px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 30px;
+    border: 7px solid #691a1a73;
 }
 
 .clock-time,
 .clock-ampm {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 30px;
-    color: lightgrey;
+    color: #effddbc5;
 }
 
 .clock-time {
-    font-size: 48px;
+    font-size: 50px;
 }
