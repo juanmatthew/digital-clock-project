@@ -7,6 +7,14 @@ class DigitalClock {
     }
 
     //need to now make it run automatically
+    start() {
+        this.update();
+
+        setInterval(() => {
+            this.update();
+            //every half second it updates the time
+        }, 500);
+    }
 
 
     update() {
@@ -46,4 +54,5 @@ class DigitalClock {
 const clockElement = document.querySelector('.clock-container');
 const clockObject = new DigitalClock(clockElement);
 
-clockObject.update();
+//calling start rather than update so that it checks the time every half second and updates
+clockObject.start();
